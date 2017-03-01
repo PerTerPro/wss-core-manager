@@ -11,6 +11,6 @@ namespace Wss.Repository.Basic
     {
         void Insert(T entity);
         void Delete(T entity);
-        T GetById(int id);
+        T GetById(long id);
     }
 }
