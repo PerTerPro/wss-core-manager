@@ -1,0 +1,1 @@
+# wss-core-manager
