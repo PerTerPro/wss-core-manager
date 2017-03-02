@@ -5,16 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Wss.Entities;
 
-namespace Wss.Repository.Basic
+namespace Wss.Repository
 {
-    public interface IRepository<T> where T : Entity
+    interface IRepositoryProduct:IRepository<Product>
     {
-        void Insert(T entity);
-        void Delete(long id);
-        T GetById(long id);
-
         void SetValidProduct(long productId, bool isValid);
-
         void UpdateCrawlInfo(Product product);
     }
+
 }

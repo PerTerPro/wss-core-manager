@@ -12,11 +12,10 @@ namespace Wss.Bll
     public class ProductBll
     {
         private readonly IRepository<Product> _repositoryProduct ;
-        private readonly ITriggerBeforeChange _triggerBeforeChange;
-        private readonly ITriggerBeforeChange _triggerAfterChange;
-        
+        private readonly ITriggerBeforeChangeProduct _triggerBeforeChange;
+        private readonly ITriggerAfterChangeProduct _triggerAfterChange;
 
-        public ProductBll(IRepository<Product> repositoryProduct, ITriggerBeforeChange triggerBeforeChange, ITriggerBeforeChange triggerAfterChange)
+        public ProductBll(IRepository<Product> repositoryProduct, ITriggerBeforeChangeProduct triggerBeforeChange, ITriggerAfterChangeProduct triggerAfterChange)
         {
             _repositoryProduct = repositoryProduct;
             _triggerBeforeChange = triggerBeforeChange;
@@ -39,20 +38,13 @@ namespace Wss.Bll
         {
             if (this._triggerBeforeChange != null)
             {
-                Task.Run(() =>
-                {
-                    _triggerBeforeChange.TriggerDelete(productId);
-                });
+                var product = _repositoryProduct.GetById(productId);
+                _triggerBeforeChange.TriggerDelete(product);
             }
-
             _repositoryProduct.Delete(productId);
-
             if (this._triggerAfterChange != null)
             {
-                Task.Run(() =>
-                {
-                    _triggerAfterChange.TriggerDelete(productId);
-                });
+                _triggerAfterChange.TriggerDelete(productId);
             }
         }
 
