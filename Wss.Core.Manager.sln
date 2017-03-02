@@ -7,11 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Repository", "Wss.Repos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Entities", "Wss.Entities\Wss.Entities.csproj", "{432E1472-96AB-4DE0-8727-3CCABABE344E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{E56DB2C9-6531-4E95-A4A6-F91BA10D644F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{E56DB2C9-6531-4E95-A4A6-F91BA10D644F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Bll", "Wss.Bll\Wss.Bll.csproj", "{2DEBA4C2-3D30-4AF5-8DE7-85673D86F82B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.RepositoryTests", "Wss.RepositoryTests\Wss.RepositoryTests.csproj", "{1D6A2B5E-07B6-43CF-AAB2-3B71F3524C66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Lib.RabbitMq", "Wss.Lib.RabbitMq\Wss.Lib.RabbitMq.csproj", "{4C5FD091-AD9C-4F64-8B34-A015761221A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,8 +37,15 @@ Global
 		{1D6A2B5E-07B6-43CF-AAB2-3B71F3524C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D6A2B5E-07B6-43CF-AAB2-3B71F3524C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D6A2B5E-07B6-43CF-AAB2-3B71F3524C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C5FD091-AD9C-4F64-8B34-A015761221A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C5FD091-AD9C-4F64-8B34-A015761221A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C5FD091-AD9C-4F64-8B34-A015761221A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C5FD091-AD9C-4F64-8B34-A015761221A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C5FD091-AD9C-4F64-8B34-A015761221A8} = {E56DB2C9-6531-4E95-A4A6-F91BA10D644F}
 	EndGlobalSection
 EndGlobal

@@ -7,8 +7,8 @@
     <ProjectGuid>{2DEBA4C2-3D30-4AF5-8DE7-85673D86F82B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary1</RootNamespace>
-    <AssemblyName>ClassLibrary1</AssemblyName>
+    <RootNamespace>Wss.Bll</RootNamespace>
+    <AssemblyName>Wss.Bll</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,7 +40,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ProductBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
+      <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
+      <Name>Wss.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Lib.RabbitMq\Wss.Lib.RabbitMq.csproj">
+      <Project>{4c5fd091-ad9c-4f64-8b34-a015761221a8}</Project>
+      <Name>Wss.Lib.RabbitMq</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Repository\Wss.Repository.csproj">
+      <Project>{92d6b800-24bf-45a8-8837-5a2394135f3a}</Project>
+      <Name>Wss.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
