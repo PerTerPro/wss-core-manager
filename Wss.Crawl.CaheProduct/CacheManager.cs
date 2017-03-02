@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Wss.Crawl.CaheProduct
 {
-    public class Class1
+    public class CacheManager
     {
+        public void SyncCode()
+        {
+            
+        }
     }
 }

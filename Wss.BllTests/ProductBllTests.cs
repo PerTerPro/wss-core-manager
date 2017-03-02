@@ -7,7 +7,7 @@ using Wss.Bll;
 using NUnit.Framework;
 using Telerik.JustMock;
 using Wss.Entities;
-using Wss.Repository.Basic;
+using Wss.Repository;
 
 namespace Wss.Bll.Tests
 {
@@ -19,7 +19,7 @@ namespace Wss.Bll.Tests
         [Test()]
         public void ShouldBeCallInsertOfRepositoryOneTimeWhenInsertProduct()
         {
-            var repository = Mock.Create<IRepository<Product>>();
+            var repository = Mock.Create<IProductRepository>();
             Mock.Arrange(() => repository.Insert(Arg.IsAny<Product>())).DoNothing();
             ProductBll productBll = new ProductBll(repository, null, null);
             productBll.InsertProduct(new Product()
@@ -31,7 +31,7 @@ namespace Wss.Bll.Tests
         [Test()]
         public void ShouldBeCallDeleteOfRepositoryOneTimeWhenDeleteProduct()
         {
-            var repository = Mock.Create<IRepository<Product>>();
+            var repository = Mock.Create<IProductRepository>();
             Mock.Arrange(() => repository.Delete(Arg.IsAny<long>())).DoNothing();
             ProductBll productBll = new ProductBll(repository, null, null);
             productBll.DeleteById(100);
@@ -41,7 +41,7 @@ namespace Wss.Bll.Tests
         [Test()]
         public void ShouldBeCallTriggerBeforeInsertOneTimeWhenInsertProductWithTriggerBefore()
         {
-            var repository = Mock.Create<IRepository<Product>>();
+            var repository = Mock.Create<IProductRepository>();
             Mock.Arrange(() => repository.Insert(Arg.IsAny<Product>())).DoNothing();
 
             var triggerBefore = Mock.Create<ITriggerBeforeChangeProduct>();
@@ -58,7 +58,7 @@ namespace Wss.Bll.Tests
            [Test()]
         public void ShouldBeCallTriggerAfterUpdateOneTimeForCrawlerInfoProduct()
         {
-            var repository = Mock.Create<IRepository<Product>>();
+            var repository = Mock.Create<IProductRepository>();
             Mock.Arrange(() => repository.UpdateCrawlInfo(Arg.IsAny<Product>())).DoNothing();
             ITriggerAfterChangeProduct triggerAfter = Mock.Create<ITriggerAfterChangeProduct>();
             Mock.Arrange(() => triggerAfter.TriggerUpdate(Arg.IsAny<Product>())).DoNothing();
@@ -70,7 +70,7 @@ namespace Wss.Bll.Tests
         [Test()]
         public void ShouldBeCallTriggerBeforeUpdateOneTimeBeforeUpdateCrawlInfoProduct()
         {
-            var repository = Mock.Create<IRepository<Product>>();
+            var repository = Mock.Create<IProductRepository>();
             Mock.Arrange(() => repository.UpdateCrawlInfo(Arg.IsAny<Product>())).DoNothing();
             var triggerBefore = Mock.Create<ITriggerBeforeChangeProduct>();
             Mock.Arrange(() => triggerBefore.TriggerUpdate(Arg.IsAny<Product>())).DoNothing();
@@ -84,7 +84,7 @@ namespace Wss.Bll.Tests
         [Test()]
         public void ShouldBeCallTriggerBeforeDeleteOneTimeBeforeDeleteCrawlInfoProduct()
         {
-            var repository = Mock.Create<IRepository<Product>>();
+            var repository = Mock.Create<IProductRepository>();
             Mock.Arrange(() => repository.Delete(Arg.IsAny<long>())).DoNothing();
             var triggerBefore = Mock.Create<ITriggerBeforeChangeProduct>();
             Mock.Arrange(() => triggerBefore.TriggerUpdate(Arg.IsAny<Product>())).DoNothing();

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Wss.Crawl.CaheProduct;
-using NUnit.Framework;
-namespace Wss.Crawl.CaheProduct.Tests
+﻿using NUnit.Framework;
+
+namespace Wss.Crawl.CaheProductTests
 {
     [TestFixture()]
     public class CacheManagerTests

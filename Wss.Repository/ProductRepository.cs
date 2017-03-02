@@ -1,18 +1,19 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
 using Wss.Entities;
-using Wss.Repository.Basic;
 
 namespace Wss.Repository
 {
-    public class ProductRepository:IRepository<Product>
+    public class ProductRepository:IProductRepository
     {
         private readonly IDbConnection _connection=null;
 
-        public ProductRepository(IDbConnection connection)
+        public ProductRepository()
         {
-            this._connection = connection;
+            this._connection = new SqlConnection(WSS.StaticConnect.Connection.ConnectionProduct);
         }
 
 
@@ -35,17 +36,24 @@ namespace Wss.Repository
 
         public void Delete(long id)
         {
-            throw new System.NotImplementedException();
+           
         }
 
         public void SetValidProduct(long productId, bool isValid)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public void UpdateCrawlInfo(Product pt)
         {
-            throw new System.NotImplementedException();
+            
+        }
+
+
+        public IEnumerable<Product> GetProduct(long companyId, int pageId, int rowInPage)
+        {
+            string sql = string.Format(@"Select Id, Name, Price, ImageId From Product pt Where pt.company = {0}", companyId);
+            return _connection.Query<Product>(sql);
         }
     }
 }

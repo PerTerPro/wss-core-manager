@@ -7,10 +7,13 @@ using Wss.Entities;
 
 namespace Wss.Repository
 {
-    interface IRepositoryProduct:IRepository<Product>
+    public interface IProductRepository:IRepository<Product>
     {
         void SetValidProduct(long productId, bool isValid);
+        
         void UpdateCrawlInfo(Product product);
+
+        IEnumerable<Product> GetProduct(long companyId, int pageId, int rowInPage);
     }
 
 }

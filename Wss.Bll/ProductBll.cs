@@ -5,17 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Wss.Entities;
 using Wss.Lib.RabbitMq;
-using Wss.Repository.Basic;
+using Wss.Repository;
 
 namespace Wss.Bll
 {
     public class ProductBll
     {
-        private readonly IRepository<Product> _repositoryProduct ;
+        private readonly IProductRepository _repositoryProduct ;
         private readonly ITriggerBeforeChangeProduct _triggerBeforeChange;
         private readonly ITriggerAfterChangeProduct _triggerAfterChange;
 
-        public ProductBll(IRepository<Product> repositoryProduct, ITriggerBeforeChangeProduct triggerBeforeChange, ITriggerAfterChangeProduct triggerAfterChange)
+        public ProductBll(IProductRepository repositoryProduct, ITriggerBeforeChangeProduct triggerBeforeChange, ITriggerAfterChangeProduct triggerAfterChange)
         {
             _repositoryProduct = repositoryProduct;
             _triggerBeforeChange = triggerBeforeChange;
