@@ -13,7 +13,7 @@ namespace Wss.Repository
         
         void UpdateCrawlInfo(Product product);
 
-        IEnumerable<Product> GetProduct(long companyId, int pageId, int rowInPage);
+        IEnumerable<Product> GetProducts(long companyId, int pageIndex, int rowInPage);
     }
 
 }

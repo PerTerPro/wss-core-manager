@@ -50,7 +50,7 @@ namespace Wss.Repository
         }
 
 
-        public IEnumerable<Product> GetProduct(long companyId, int pageId, int rowInPage)
+        public IEnumerable<Product> GetProducts(long companyId, int pageId, int rowInPage)
         {
             string sql = string.Format(@"Select Id, Name, Price, ImageId From Product pt Where pt.company = {0}", companyId);
             return _connection.Query<Product>(sql);

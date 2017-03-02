@@ -14,7 +14,11 @@ namespace Wss.Bll.Tests
     [TestFixture()]
     public class ProductBllTests
     {
-       
+        [Test]
+        public void ShouldGetProductsOfCompany()
+        {
+            
+        }
 
         [Test()]
         public void ShouldBeCallInsertOfRepositoryOneTimeWhenInsertProduct()
