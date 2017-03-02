@@ -8,5 +8,9 @@ namespace Wss.Entities.Crawler
 {
     public class ProductCrawler
     {
+        public bool GetHashCrawler()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
