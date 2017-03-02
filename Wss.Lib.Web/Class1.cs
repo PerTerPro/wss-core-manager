@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Wss.Lib.Web
 {
-    public interface Class1
+    public interface IDownloader
     {
+        string GetHtml(string url);
     }
 }
