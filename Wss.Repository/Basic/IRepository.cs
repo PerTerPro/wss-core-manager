@@ -15,6 +15,6 @@ namespace Wss.Repository.Basic
 
         void SetValidProduct(long productId, bool isValid);
 
-        void UpdateCrawlInfo(long productId);
+        void UpdateCrawlInfo(Product product);
     }
 }

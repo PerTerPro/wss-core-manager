@@ -31,5 +31,21 @@ namespace Wss.Repository
             string sql = string.Format(@"Select Id, Name, Price, ImageId From Product pt Where pt.Id = {0}", id);
             return this._connection.Query<Product>(sql).First();
         }
+
+
+        public void Delete(long id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetValidProduct(long productId, bool isValid)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateCrawlInfo(Product pt)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

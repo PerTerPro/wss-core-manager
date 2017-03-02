@@ -5,39 +5,58 @@ using System.Text;
 using System.Threading.Tasks;
 using Wss.Bll;
 using NUnit.Framework;
+using Telerik.JustMock;
+using Wss.Entities;
+using Wss.Repository.Basic;
+
 namespace Wss.Bll.Tests
 {
     [TestFixture()]
     public class ProductBllTests
     {
+       
+
         [Test()]
-        public void ProductBllTest()
+        public void ShouldBeCallInsertOfRepositoryOneTimeWhenInsertProduct()
         {
-            Assert.Fail();
+            var repository = Mock.Create<IRepository<Product>>();
+            Mock.Arrange(() => repository.Insert(Arg.IsAny<Product>())).DoNothing();
+            ProductBll productBll = new ProductBll(repository, null, null);
+            productBll.InsertProduct(new Product()
+            {
+            });
+            Mock.Assert(() => repository.Insert(Arg.IsAny<Product>()), Occurs.Once());
         }
 
         [Test()]
-        public void InsertProductTest()
+        public void ShouldBeCallTriggerBeforeInsertOneTimeWhenInsertProductWithTriggerBefore()
         {
-            ProductBll productBll
+            var repository = Mock.Create<IRepository<Product>>();
+            Mock.Arrange(() => repository.Insert(Arg.IsAny<Product>())).DoNothing();
+
+            var triggerBefore = Mock.Create<ITriggerBeforeChange>();
+            Mock.Arrange(() => triggerBefore.TriggerInsert(Arg.IsAny<Product>())).DoNothing();
+
+            ProductBll productBll = new ProductBll(repository, triggerBefore, null);
+            productBll.InsertProduct(new Product()
+            {
+            });
+
+            Mock.Assert(() => triggerBefore.TriggerInsert(Arg.IsAny<Product>()), Occurs.Once());
         }
 
-        [Test()]
-        public void DeleteByIdTest()
+         [Test()]
+        public void ShouldBeCallCallTriggerBeforeUpdateOneTimeBeforeUpdateCrawlInfoProduct()
         {
-            
-        }
+            var repository = Mock.Create<IRepository<Product>>();
+            Mock.Arrange(() => repository.UpdateCrawlInfo(Arg.IsAny<Product>())).DoNothing();
+            var triggerBefore = Mock.Create<ITriggerBeforeChange>();
+            Mock.Arrange(() => triggerBefore.TriggerUpdate(Arg.IsAny<Product>())).DoNothing();
 
-        [Test()]
-        public void UpdateCrawlInfoProductTest()
-        {
-            
-        }
+            ProductBll productBll = new ProductBll(repository, triggerBefore, null);
+            productBll.UpdateCrawlInfoProduct(new Product());
 
-        [Test()]
-        public void SetValidProductTest()
-        {
-            
+            Mock.Assert(() => triggerBefore.TriggerUpdate(Arg.IsAny<Product>()), Occurs.Once());
         }
     }
 }

@@ -41,6 +41,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="Telerik.JustMock, Version=2016.2.426.1, Culture=neutral, PublicKeyToken=721b6c5bc0326b3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\JustMock.2016.2.426.1\lib\Net35\Telerik.JustMock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -61,6 +65,14 @@
     <ProjectReference Include="..\Wss.Bll\Wss.Bll.csproj">
       <Project>{2DEBA4C2-3D30-4AF5-8DE7-85673D86F82B}</Project>
       <Name>Wss.Bll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
+      <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
+      <Name>Wss.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Repository\Wss.Repository.csproj">
+      <Project>{92d6b800-24bf-45a8-8837-5a2394135f3a}</Project>
+      <Name>Wss.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

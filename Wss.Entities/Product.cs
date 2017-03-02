@@ -12,6 +12,8 @@ namespace Wss.Entities
         public long Price { get; set; }
         public string ImageId { get; set; }
 
-       
+
+
+        public string ImageUrl { get; set; }
     }
 }
