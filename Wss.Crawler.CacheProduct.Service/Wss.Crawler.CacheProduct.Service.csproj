@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{671742DD-4960-45B4-9A3B-7234054EB5F7}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{9789F6AD-A353-46C6-8A47-8BAE01765BED}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wss.Crawl.CaheProduct</RootNamespace>
-    <AssemblyName>Wss.Crawl.CaheProduct</AssemblyName>
+    <RootNamespace>Wss.Crawler.CacheProduct.Service</RootNamespace>
+    <AssemblyName>Wss.Crawler.CacheProduct.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,13 +29,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="StackExchange.Redis">
-      <HintPath>..\DLL\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,14 +44,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Websosanh.Core.Drivers.Redis">
-      <HintPath>..\DLL\Websosanh.Core.Drivers.Redis.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CacheManager.cs" />
-    <Compile Include="ProductCrawlerCache.cs" />
-    <Compile Include="IProductCrawlerCache.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,13 +54,37 @@
       <Project>{2deba4c2-3d30-4af5-8de7-85673d86f82b}</Project>
       <Name>Wss.Bll</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wss.Crawl.CaheProduct\Wss.Crawl.CaheProduct.csproj">
+      <Project>{671742dd-4960-45b4-9a3b-7234054eb5f7}</Project>
+      <Name>Wss.Crawl.CaheProduct</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.CrawlerProduct\Wss.CrawlerProduct.csproj">
+      <Project>{71bd44d8-9c33-43b1-bdc8-ef2265ad352e}</Project>
+      <Name>Wss.CrawlerProduct</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
       <Name>Wss.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wss.Factory\Wss.Factory.csproj">
+      <Project>{0324aa0e-30a8-4e87-aed7-de9ed82d546e}</Project>
+      <Name>Wss.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Lib.RabbitMq\Wss.Lib.RabbitMq.csproj">
+      <Project>{4c5fd091-ad9c-4f64-8b34-a015761221a8}</Project>
+      <Name>Wss.Lib.RabbitMq</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wss.Repository\Wss.Repository.csproj">
       <Project>{92d6b800-24bf-45a8-8837-5a2394135f3a}</Project>
       <Name>Wss.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSS.StaticConnect\WSS.StaticConnect.csproj">
+      <Project>{738fcc2b-5711-4ea9-a9e8-995438046e36}</Project>
+      <Name>WSS.StaticConnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.WorkerRabbitMq\Wss.WorkerRabbitMq.csproj">
+      <Project>{d2050c7b-c480-471b-9ce0-57f019a255c9}</Project>
+      <Name>Wss.WorkerRabbitMq</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

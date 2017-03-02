@@ -18,8 +18,10 @@ namespace Wss.Crawl.CaheProductTests
             IProductCrawlerCache productCrawlerCache = Mock.Create<IProductCrawlerCache>();
             Mock.Arrange(() => productRepository.GetProducts(Arg.IsAny<long>(), Arg.IsAny<int>(), Arg.IsAny<int>())).Returns(new List<Product>()).OccursOnce();
             Mock.Arrange(() => productCrawlerCache.SyncCache(Arg.IsAny<IEnumerable<Product>>())).DoNothing().OccursOnce();
+            
             Wss.Crawl.CaheProduct.CacheCrawlerManager cacheManager = new CacheCrawlerManager(productRepository, productCrawlerCache);
             cacheManager.SyncCode(24709975467303384);
+
             Mock.Assert(productRepository);
             Mock.Assert(productCrawlerCache);
         }

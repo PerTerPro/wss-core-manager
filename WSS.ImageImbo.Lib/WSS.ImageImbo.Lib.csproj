@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{671742DD-4960-45B4-9A3B-7234054EB5F7}</ProjectGuid>
+    <ProjectGuid>{294A2FA6-9FD6-4A23-A58E-764AEAA642A3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wss.Crawl.CaheProduct</RootNamespace>
-    <AssemblyName>Wss.Crawl.CaheProduct</AssemblyName>
+    <RootNamespace>WSS.ImageImbo.Lib</RootNamespace>
+    <AssemblyName>WSS.ImageImbo.Lib</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,46 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="StackExchange.Redis">
-      <HintPath>..\DLL\StackExchange.Redis.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\000\DLLs\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Websosanh.Core.Drivers.Redis">
-      <HintPath>..\DLL\Websosanh.Core.Drivers.Redis.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CacheManager.cs" />
-    <Compile Include="ProductCrawlerCache.cs" />
-    <Compile Include="IProductCrawlerCache.cs" />
+    <Compile Include="IImboService.cs" />
+    <Compile Include="ImboService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Wss.Bll\Wss.Bll.csproj">
-      <Project>{2deba4c2-3d30-4af5-8de7-85673d86f82b}</Project>
-      <Name>Wss.Bll</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
-      <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
-      <Name>Wss.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Wss.Repository\Wss.Repository.csproj">
-      <Project>{92d6b800-24bf-45a8-8837-5a2394135f3a}</Project>
-      <Name>Wss.Repository</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

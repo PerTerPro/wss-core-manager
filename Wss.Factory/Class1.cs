@@ -14,7 +14,8 @@ namespace Wss.Factory
     {
         public override void Load()
         {
-          
+            this.Bind<IProductRepository>().To<ProductRepository>();
+           
         }
     }
 
