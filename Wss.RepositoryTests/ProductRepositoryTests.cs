@@ -10,10 +10,7 @@ namespace Wss.RepositoryTests
         [Test()]
         public void ShouldBeReturnProductsOfCompany()
         {
-            
-            
-
-            ProductRepository productRepository = new ProductRepository()
+            ProductRepository productRepository = new ProductRepository();
         }
     }
 }
