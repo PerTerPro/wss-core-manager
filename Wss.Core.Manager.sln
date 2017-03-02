@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Lib.Web", "Wss.Lib.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSS.ImageImbo.LibTests1", "WSS.ImageImbo.LibTests1\WSS.ImageImbo.LibTests1.csproj", "{81B8B3BA-616F-4DA8-A2FA-24175F16E0C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.CrawlerProductTests", "Wss.CrawlerProductTests\Wss.CrawlerProductTests.csproj", "{7600FD36-5127-4416-916E-AE915AEC5478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{81B8B3BA-616F-4DA8-A2FA-24175F16E0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81B8B3BA-616F-4DA8-A2FA-24175F16E0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81B8B3BA-616F-4DA8-A2FA-24175F16E0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7600FD36-5127-4416-916E-AE915AEC5478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7600FD36-5127-4416-916E-AE915AEC5478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7600FD36-5127-4416-916E-AE915AEC5478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7600FD36-5127-4416-916E-AE915AEC5478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -125,5 +131,6 @@ Global
 		{294A2FA6-9FD6-4A23-A58E-764AEAA642A3} = {E56DB2C9-6531-4E95-A4A6-F91BA10D644F}
 		{ED5113FE-DF27-4DCE-BC72-3C2F4C3471E3} = {E56DB2C9-6531-4E95-A4A6-F91BA10D644F}
 		{81B8B3BA-616F-4DA8-A2FA-24175F16E0C7} = {B459E45F-CD65-4983-A4E0-AD73541B2DD7}
+		{7600FD36-5127-4416-916E-AE915AEC5478} = {B459E45F-CD65-4983-A4E0-AD73541B2DD7}
 	EndGlobalSection
 EndGlobal

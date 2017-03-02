@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAnalysicProduct.cs" />
+    <Compile Include="Crawler\IAnalysicProduct.cs" />
     <Compile Include="IProductBll.cs" />
     <Compile Include="ProductBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

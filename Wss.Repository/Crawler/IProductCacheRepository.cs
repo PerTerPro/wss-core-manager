@@ -7,27 +7,10 @@ using Wss.Entities.Crawler;
 
 namespace Wss.Repository.Crawler
 {
-    public class IProductCacheRepository : IRepository<ProductCache>
+    public interface IProductCacheRepository : IRepository<ProductCache>
     {
+        IEnumerable<ProductCache> GetProductCaches(long companyId, int numberItems);
 
-        public void Insert(ProductCache entity)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void Delete(long id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProductCache GetById(long id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<ProductCache> GetProductCaches(long _companyId, int p)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

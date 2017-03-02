@@ -52,9 +52,7 @@ namespace Wss.Bll.Tests
             Mock.Arrange(() => triggerBefore.TriggerInsert(Arg.IsAny<Product>())).DoNothing();
 
             ProductBll productBll = new ProductBll(repository, triggerBefore, null);
-            productBll.InsertProduct(new Product()
-            {
-            });
+            productBll.InsertProduct(new Product());
 
             Mock.Assert(() => triggerBefore.TriggerInsert(Arg.IsAny<Product>()), Occurs.Once());
         }
