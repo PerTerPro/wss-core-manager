@@ -29,11 +29,12 @@ namespace Wss.CrawlerProductTests
                 new ProductCache(),
                 new ProductCache()
             }).OccursAtLeast(1);
+
             Mock.Arrange(() => downloader.GetHtml(Arg.IsAny<string>())).Returns("htmlTest").OccursAtLeast(1);
             Mock.Arrange(() => analysicProduct.Analysic(Arg.IsAny<string>(),Arg.IsAny<Company>())).Returns(new ProductCrawler()).OccursAtLeast(1);
             Mock.Arrange(() => companyRepository.GetById(Arg.IsAny<long>())).Returns(new Company()).OccursAtLeast(1);
 
-            WorkerCrawler workerCrawler = new WorkerCrawler(1, productCacheRepository, analysicProduct, downloader, productRepository, companyRepository);
+            WorkerCrawler workerCrawler = new WorkerCrawler(1, productCacheRepository, downloader, productRepository, companyRepository);
             workerCrawler.Start();
 
             Mock.Assert(productCacheRepository,"one");
