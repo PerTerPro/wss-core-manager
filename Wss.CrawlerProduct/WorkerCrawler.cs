@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wss.Bll;
+using Wss.Bll.Crawler;
 using Wss.Entities;
 using Wss.Entities.Crawler;
 using Wss.Lib.Web;
@@ -19,14 +20,16 @@ namespace Wss.CrawlerProduct
         private readonly long _companyId;
         private readonly IAnalysicProduct _analysicProduct;
         private readonly IDownloader _downloader;
+        private readonly Company _company;
 
-        public WorkerCrawler(long companyId, IProductCacheRepository productCacheRepository, IAnalysicProduct analysicProduct, IDownloader downloader, IProductRepository productRepository)
+        public WorkerCrawler(long companyId, IProductCacheRepository productCacheRepository, IDownloader downloader, IProductRepository productRepository, ICompanyRepository companyRepository)
         {
             _companyId = companyId;
             _productCacheRepository = productCacheRepository;
-            _analysicProduct = analysicProduct;
+            _analysicProduct = new AnalysicProduct();
             _downloader = downloader;
             _productRepository = productRepository;
+            _company = companyRepository.GetById(companyId);
         }
 
         public void Start()
@@ -35,7 +38,7 @@ namespace Wss.CrawlerProduct
             foreach (var productCache in productsInCache)
             {
                 string url = productCache.DetailUrl;
-                ProductCrawler productCrawler = _analysicProduct.Analysic(_downloader.GetHtml(url));
+                ProductCrawler productCrawler = _analysicProduct.Analysic(_downloader.GetHtml(url), _company);
                 if (productCrawler != null)
                 {
                     ProductCache productCacheCrawler  = new ProductCache(productCrawler);
@@ -46,6 +49,5 @@ namespace Wss.CrawlerProduct
                 }
             }
         }
-
     }
 }

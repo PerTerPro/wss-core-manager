@@ -51,11 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanyRepository.cs" />
     <Compile Include="Crawler\IProductCacheRepository.cs" />
+    <Compile Include="Crawler\ProductCacheRepository.cs" />
     <Compile Include="DbConnectionProduct.cs" />
+    <Compile Include="ICompanyRepository.cs" />
     <Compile Include="IDbConnectionProduct.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="IRepositoryProduct.cs" />
+    <Compile Include="IProductRepository.cs" />
     <Compile Include="IRepositoryProductCache.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
