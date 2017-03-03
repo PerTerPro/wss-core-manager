@@ -22,11 +22,11 @@ namespace Wss.CrawlerProduct
         private readonly IDownloader _downloader;
         private readonly Company _company;
 
-        public WorkerCrawler(long companyId, IProductCacheRepository productCacheRepository, IDownloader downloader, IProductRepository productRepository, ICompanyRepository companyRepository, IAnalysicProduct _analysicProduct)
+        public WorkerCrawler(long companyId, IProductCacheRepository productCacheRepository, IDownloader downloader, IProductRepository productRepository, ICompanyRepository companyRepository, IAnalysicProduct analysicProduct)
         {
             _companyId = companyId;
             _productCacheRepository = productCacheRepository;
-            _analysicProduct = new AnalysicProduct();
+            _analysicProduct = analysicProduct;
             _downloader = downloader;
             _productRepository = productRepository;
             _company = companyRepository.GetById(companyId);
