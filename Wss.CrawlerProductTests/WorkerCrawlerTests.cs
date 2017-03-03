@@ -34,7 +34,7 @@ namespace Wss.CrawlerProductTests
             Mock.Arrange(() => analysicProduct.Analysic(Arg.IsAny<string>(),Arg.IsAny<Company>())).Returns(new ProductCrawler()).OccursAtLeast(1);
             Mock.Arrange(() => companyRepository.GetById(Arg.IsAny<long>())).Returns(new Company()).OccursAtLeast(1);
 
-            WorkerCrawler workerCrawler = new WorkerCrawler(1, productCacheRepository, downloader, productRepository, companyRepository);
+            WorkerCrawler workerCrawler = new WorkerCrawler(1, productCacheRepository, downloader, productRepository, companyRepository, analysicProduct);
             workerCrawler.Start();
 
             Mock.Assert(productCacheRepository,"one");

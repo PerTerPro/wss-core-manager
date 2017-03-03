@@ -14,7 +14,7 @@ namespace Wss.Repository.Crawler
 
         public IEnumerable<Entities.Crawler.ProductCache> GetProductCaches(long companyId, int numberItems)
         {
-            
+            return null;
         }
 
         public void Insert(Entities.Crawler.ProductCache entity)
