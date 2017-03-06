@@ -55,8 +55,9 @@
     <Compile Include="IParserProductCrawler.cs" />
     <Compile Include="ParserProductCrawler.cs" />
     <Compile Include="ProductCrawlerCache.cs" />
-    <Compile Include="IProductCrawlerCache.cs" />
+    <Compile Include="IManagerCacheProductCrawler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ServiceCacheManager.cs" />
     <Compile Include="WorkerCrawler.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +68,10 @@
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
       <Name>Wss.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Lib.Hash\Wss.Lib.Cryptography.csproj">
+      <Project>{11e42fc1-6336-4a63-b62f-411eaab859f7}</Project>
+      <Name>Wss.Lib.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.Lib.Web\Wss.Lib.Web.csproj">
       <Project>{ed5113fe-df27-4dce-bc72-3c2f4c3471e3}</Project>

@@ -19,7 +19,7 @@ namespace Wss.Repository
         /// <param name="imageProducts"></param>
         void UpdateImageBatch(List<Tuple<long, string, string>> imageProducts);
 
-        IEnumerable<Product> GetProducts(long companyId, int pageIndex, int rowInPage);
+        IEnumerable<Product> GetProductsForCacheCrawler(long companyId, int pageIndex, int rowInPage);
 
         void UpdateProducts(IEnumerable<Product> products);
 

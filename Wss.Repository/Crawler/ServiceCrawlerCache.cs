@@ -27,7 +27,7 @@ namespace Wss.Repository.CrawlerCache
             int page = 0;
             do
             {
-                var products = _productRepository.GetProducts(companyId, page++, pageCount);
+                var products = _productRepository.GetProductsForCacheCrawler(companyId, page++, pageCount);
                 var enumerableProduct = products as Product[] ?? products.ToArray();
                 if (!enumerableProduct.Any())
                 {

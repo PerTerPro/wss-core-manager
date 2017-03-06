@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StackExchange.Redis;
+using Websosanh.Core.Drivers.Redis;
 using Wss.Entities.Crawler;
 
 namespace Wss.Repository.Crawler
@@ -16,6 +17,11 @@ namespace Wss.Repository.Crawler
         private const string PREFIX_CACHE_PRODUCT = "prd_cache:";
 
         private IDatabase _database;
+
+        public ProductCacheRepository()
+        {
+            _database = RedisManager.GetRedisServer("redisCacheCrawlerDuplicate").GetDatabase(0);
+        }
 
         public IEnumerable<ProductCache> GetTopProductCaches(long companyId, int numberItems)
         {
@@ -55,11 +61,19 @@ namespace Wss.Repository.Crawler
 
         public void Delete(long id)
         {
+            _database.KeyDelete(id.ToString());
         }
 
         public Entities.Crawler.ProductCache GetById(long id)
         {
             return null;
+        }
+
+
+        public void UpsertProductHashCache(long companyId, IEnumerable<HashProduct> productCaches)
+        {
+            var lst = productCaches.Select(v => new HashEntry(v.Id, v.GetJson())).ToArray();
+            _database.HashSet(PREFIX_CACHE_PRODUCT + companyId, lst);
         }
     }
 }

@@ -22,10 +22,17 @@ namespace Wss.Entities.Crawler
           
         }
 
-        public ProductCache(Product productCrawler)
+        public ProductCache(Product product)
         {
-           
+            Id = product.Id;
+            Name = product.Name;
+            Price = product.Price;
+            ImageUrl = product.ImageUrl;
         }
+
+        public string Name { get; set; }
+
+        public long Price { get; set; }
 
         public long Hash { get; set; }
 
@@ -41,5 +48,7 @@ namespace Wss.Entities.Crawler
         {
             return null;
         }
+
+        public string ImageUrl { get; set; }
     }
 }

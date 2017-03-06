@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>..\..\..\wss-core-manager\DLL\protobuf-net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +48,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="ConfigCrawler.cs" />
+    <Compile Include="Crawler\HashProduct.cs" />
     <Compile Include="Crawler\ProductCache.cs" />
     <Compile Include="Crawler\ProductCrawler.cs" />
     <Compile Include="IEntity.cs" />
@@ -52,9 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wss.Lib.Hash\Wss.Lib.Hash.csproj">
+    <ProjectReference Include="..\Wss.Lib.Hash\Wss.Lib.Cryptography.csproj">
       <Project>{11E42FC1-6336-4A63-B62F-411EAAB859F7}</Project>
-      <Name>Wss.Lib.Hash</Name>
+      <Name>Wss.Lib.Cryptography</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -55,10 +55,12 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="CI_TEST\ManagerCacheProductCrawlerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkerCrawlerTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

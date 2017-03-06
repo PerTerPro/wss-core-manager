@@ -7,21 +7,28 @@ using Wss.Repository;
 
 namespace Wss.Crawl.CaheProduct
 {
-    public class CacheCrawlerManager
+    public class CacheCrawlerManager : IManagerCacheProductCrawler
     {
         private readonly IProductRepository _productRepository;
-        private readonly IProductCrawlerCache _productCrawlerCache;
+        private readonly IManagerCacheProductCrawler _productCrawlerCache;
 
-        public CacheCrawlerManager(IProductRepository productRepository, IProductCrawlerCache productCrawlerCache)
+        public CacheCrawlerManager(IProductRepository productRepository, IManagerCacheProductCrawler productCrawlerCache)
         {
             _productRepository = productRepository;
             _productCrawlerCache = productCrawlerCache;
         }
 
-        public void SyncCode(long company)
+      
+
+        public void ResetCache(long companyId)
         {
-            var products = _productRepository.GetProducts(24709975467303384, 1, 100);
-            _productCrawlerCache.SyncCache(products);
+            _productCrawlerCache.CleanCache(companyId);
+            _productCrawlerCache.ResetCache(companyId);
+        }
+
+        public void CleanCache(long companyId)
+        {
+            
         }
     }
 }

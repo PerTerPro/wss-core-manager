@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSS.ImageImbo.LibTests1", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.CrawlerProductTests", "Wss.CrawlerProductTests\Wss.CrawlerProductTests.csproj", "{7600FD36-5127-4416-916E-AE915AEC5478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Lib.Hash", "Wss.Lib.Hash\Wss.Lib.Hash.csproj", "{11E42FC1-6336-4A63-B62F-411EAAB859F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wss.Lib.Cryptography", "Wss.Lib.Hash\Wss.Lib.Cryptography.csproj", "{11E42FC1-6336-4A63-B62F-411EAAB859F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
