@@ -11,15 +11,13 @@ using Wss.Repository.Crawler;
 namespace Wss.Crawl.CaheProduct.Tests
 {
 
-    /// <summary>
-    /// CI Test
-    /// </summary>
+    
     [TestFixture()]
     public class ManagerCacheProductCrawlerTests
     {
-     
-
-        [Test()]
+       
+        //[Test("CI Test")]
+        [NUnit.Framework.Ignore("CI Test")]
         public void ResetCacheTest()
         {
             ManagerCacheProductCrawler managerCacheProductCrawler = new ManagerCacheProductCrawler(new ProductCacheRepository(), new ProductRepository());
@@ -27,5 +25,6 @@ namespace Wss.Crawl.CaheProduct.Tests
         }
 
       
+
     }
 }
