@@ -5,6 +5,7 @@ using Telerik.JustMock.Core;
 using Wss.Crawl.CaheProduct;
 using Wss.Entities;
 using Wss.Repository;
+using Wss.Repository.CrawlerCache;
 
 namespace Wss.Crawl.CaheProductTests
 {
@@ -24,6 +25,13 @@ namespace Wss.Crawl.CaheProductTests
 
             Mock.Assert(productRepository);
             Mock.Assert(productCrawlerCache);
+        }
+
+        public void ShouldBeNotExceptionWhenResetCacheForCompany()
+        {
+             IProductRepository productRepository = Mock.Create<IProductRepository>();
+             
+              
         }
     }
 }

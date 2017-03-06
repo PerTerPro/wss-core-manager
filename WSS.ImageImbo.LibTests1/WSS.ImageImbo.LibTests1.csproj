@@ -58,9 +58,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WSS.ImageImbo.Lib\WSS.ImageImbo.Lib.csproj">
+    <ProjectReference Include="..\WSS.ImageImbo.Lib\Wss.ImageImbo.Lib.csproj">
       <Project>{294A2FA6-9FD6-4A23-A58E-764AEAA642A3}</Project>
-      <Name>WSS.ImageImbo.Lib</Name>
+      <Name>Wss.ImageImbo.Lib</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

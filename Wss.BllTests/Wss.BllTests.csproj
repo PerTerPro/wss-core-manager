@@ -62,9 +62,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wss.Bll\Wss.Bll.csproj">
+    <ProjectReference Include="..\Wss.Bll\Wss.Core.Logic.csproj">
       <Project>{2DEBA4C2-3D30-4AF5-8DE7-85673D86F82B}</Project>
-      <Name>Wss.Bll</Name>
+      <Name>Wss.Core.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>

@@ -5,31 +5,61 @@ using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StackExchange.Redis;
+using Wss.Entities.Crawler;
 
 namespace Wss.Repository.Crawler
 {
     public class ProductCacheRepository:IProductCacheRepository
     {
-        IDbConnection _dbConnection;
+        private const string PREFIX_LASTCRL_PRODUCT = "lst_crl:";
+        private const string PREFIX_CACHE_PRODUCT = "prd_cache:";
 
-        public IEnumerable<Entities.Crawler.ProductCache> GetProductCaches(long companyId, int numberItems)
+        private IDatabase _database;
+
+        public IEnumerable<ProductCache> GetTopProductCaches(long companyId, int numberItems)
         {
+            RedisValue[] productIds = _database.SortedSetRangeByRank(PREFIX_LASTCRL_PRODUCT + companyId, 0, numberItems, Order.Ascending);
+            RedisValue[] productInCaches = _database.HashGet(PREFIX_CACHE_PRODUCT + companyId, productIds);
+            List<ProductCache> productCaches = new List<ProductCache>();
+            foreach (var strProduct in productInCaches)
+            {
+                var product = ProductCache.GetFromJsonProtobuf(strProduct);
+                if (product != null)
+                {
+                    productCaches.Add(product);
+                }
+            }
             return null;
+        }
+
+        public void UpsertProducts(IEnumerable<ProductCache> productCaches)
+        {
+            foreach (var productCache in productCaches)
+            {
+                _database.SortedSetIncrement(PREFIX_LASTCRL_PRODUCT + productCache.CompanyId.ToString(), productCache.Id, 1);
+                _database.HashSet(PREFIX_CACHE_PRODUCT + productCache.CompanyId, productCache.Id.ToString(), productCache.GetJsonProtobuf());
+            }
+        }
+
+        public void Clean(long companyId)
+        {
+            _database.KeyDelete(PREFIX_CACHE_PRODUCT + companyId.ToString());
+            _database.KeyDelete(PREFIX_LASTCRL_PRODUCT + companyId.ToString());
         }
 
         public void Insert(Entities.Crawler.ProductCache entity)
         {
-            throw new NotImplementedException();
+           
         }
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
         }
 
         public Entities.Crawler.ProductCache GetById(long id)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

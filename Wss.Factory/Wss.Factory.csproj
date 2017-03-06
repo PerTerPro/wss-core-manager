@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wss.Bll\Wss.Bll.csproj">
+    <ProjectReference Include="..\Wss.Bll\Wss.Core.Logic.csproj">
       <Project>{2deba4c2-3d30-4af5-8de7-85673d86f82b}</Project>
-      <Name>Wss.Bll</Name>
+      <Name>Wss.Core.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>

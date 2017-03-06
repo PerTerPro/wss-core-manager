@@ -62,13 +62,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wss.Bll\Wss.Bll.csproj">
+    <ProjectReference Include="..\Wss.Bll\Wss.Core.Logic.csproj">
       <Project>{2DEBA4C2-3D30-4AF5-8DE7-85673D86F82B}</Project>
-      <Name>Wss.Bll</Name>
+      <Name>Wss.Core.Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Wss.CrawlerProduct\Wss.CrawlerProduct.csproj">
-      <Project>{71BD44D8-9C33-43B1-BDC8-EF2265AD352E}</Project>
-      <Name>Wss.CrawlerProduct</Name>
+    <ProjectReference Include="..\Wss.Crawl.CaheProduct\Wss.Crawl.CaheProduct.Lib.csproj">
+      <Project>{671742dd-4960-45b4-9a3b-7234054eb5f7}</Project>
+      <Name>Wss.Crawl.CaheProduct.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wss.Crawler.CacheProduct.Service\Wss.Crawler.CacheProduct.Service.csproj">
+      <Project>{9789f6ad-a353-46c6-8a47-8bae01765bed}</Project>
+      <Name>Wss.Crawler.CacheProduct.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432E1472-96AB-4DE0-8727-3CCABABE344E}</Project>

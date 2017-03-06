@@ -62,9 +62,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Wss.Crawl.CaheProduct\Wss.Crawl.CaheProduct.csproj">
+    <ProjectReference Include="..\Wss.Crawl.CaheProduct\Wss.Crawl.CaheProduct.Lib.csproj">
       <Project>{671742DD-4960-45B4-9A3B-7234054EB5F7}</Project>
-      <Name>Wss.Crawl.CaheProduct</Name>
+      <Name>Wss.Crawl.CaheProduct.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>

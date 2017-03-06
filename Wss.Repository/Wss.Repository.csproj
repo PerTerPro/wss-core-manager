@@ -42,6 +42,9 @@
       <HintPath>..\packages\RSG.Toolkit.1.0.0.0\lib\net35\RSG.Toolkit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StackExchange.Redis">
+      <HintPath>..\..\..\wss-core-manager\DLL\StackExchange.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,19 +52,23 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Websosanh.Core.Drivers.Redis">
+      <HintPath>..\..\..\wss-core-manager\DLL\Websosanh.Core.Drivers.Redis.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CompanyRepository.cs" />
+    <Compile Include="Crawler\ServiceCrawlerCache.cs" />
     <Compile Include="Crawler\IProductCacheRepository.cs" />
     <Compile Include="Crawler\ProductCacheRepository.cs" />
     <Compile Include="DbConnectionProduct.cs" />
     <Compile Include="ICompanyRepository.cs" />
     <Compile Include="IDbConnectionProduct.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="IProductRepository.cs" />
-    <Compile Include="IRepositoryProductCache.cs" />
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="Product\IProductRepository.cs" />
+    <Compile Include="Product\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TriggerProduct.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
