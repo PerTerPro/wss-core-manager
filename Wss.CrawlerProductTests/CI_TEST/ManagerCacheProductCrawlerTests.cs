@@ -18,13 +18,13 @@ namespace Wss.Crawl.CaheProduct.Tests
        
         //[Test("CI Test")]
         [NUnit.Framework.Ignore("CI Test")]
-        public void ResetCacheTest()
+        public void ShouldRunSuccessForACompany()
         {
             ManagerCacheProductCrawler managerCacheProductCrawler = new ManagerCacheProductCrawler(new ProductCacheRepository(), new ProductRepository());
             managerCacheProductCrawler.ResetCache(3309611577843405659);
         }
 
-      
+        public void ResetCache
 
     }
 }

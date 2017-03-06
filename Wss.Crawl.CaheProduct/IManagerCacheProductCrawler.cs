@@ -14,6 +14,7 @@ namespace Wss.Crawl.CaheProduct
     public interface IManagerCacheProductCrawler
     {
         void ResetCache(long companyId);
+        void ResetCache();
         void CleanCache(long companyId);
 
     }
@@ -22,13 +23,26 @@ namespace Wss.Crawl.CaheProduct
     {
         private readonly IProductCacheRepository _productCacheRepository;
         private readonly IProductRepository _productRepository;
+        private readonly ICompanyRepository _companyRepository;
 
-        public ManagerCacheProductCrawler(IProductCacheRepository productCacheRepository, IProductRepository productRepository)
+        public ManagerCacheProductCrawler(IProductCacheRepository productCacheRepository, IProductRepository productRepository, ICompanyRepository companyRepository)
         {
             _productCacheRepository = productCacheRepository;
             _productRepository = productRepository;
+            _companyRepository = companyRepository;
         }
 
+
+        public void ResetCache(IEnumerable<long> companyIds)
+        {
+            foreach (var companyId in companyIds)
+            {
+                ResetCache(companyId);
+            }
+        }
+
+
+       
         public void ResetCache(long companyId)
         {
             _productCacheRepository.Delete(companyId);
@@ -45,6 +59,16 @@ namespace Wss.Crawl.CaheProduct
         public void CleanCache(long companyId)
         {
             _productCacheRepository.Clean(companyId);
+        }
+
+
+        public void ResetCache()
+        {
+            var companies = _companyRepository.GetAllCompanyCrawler();
+            foreach (var companyId in companies)
+            {
+                ResetCache(companyId.Id);
+            }
         }
     }
 }
