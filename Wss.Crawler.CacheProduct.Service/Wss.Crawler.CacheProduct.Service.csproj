@@ -78,9 +78,9 @@
       <Project>{92d6b800-24bf-45a8-8837-5a2394135f3a}</Project>
       <Name>Wss.Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WSS.StaticConnect\WSS.StaticConnect.csproj">
+    <ProjectReference Include="..\WSS.StaticConnect\Wss.StaticConnect.csproj">
       <Project>{738fcc2b-5711-4ea9-a9e8-995438046e36}</Project>
-      <Name>WSS.StaticConnect</Name>
+      <Name>Wss.StaticConnect</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.WorkerRabbitMq\Wss.WorkerRabbitMq.csproj">
       <Project>{d2050c7b-c480-471b-9ce0-57f019a255c9}</Project>

@@ -38,7 +38,7 @@ where cp.ID = {0}", id);
             return _connection.Query<Company>(query).First();
         }
 
-        public IEnumerable<Company> GetAllCompanyCrawler()
+        public IEnumerable<Company> GetAllCompanyIdsCrawler()
         {
             string query = 
 @"select c.Id

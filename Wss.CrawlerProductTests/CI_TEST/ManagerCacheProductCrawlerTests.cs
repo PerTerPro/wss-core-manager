@@ -1,30 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 using Wss.Crawl.CaheProduct;
-using NUnit.Framework;
 using Wss.Repository;
 using Wss.Repository.Crawler;
 
-namespace Wss.Crawl.CaheProduct.Tests
+namespace Wss.CrawlerProductTests.CI_TEST
 {
-
-    
     [TestFixture()]
     public class ManagerCacheProductCrawlerTests
     {
        
-        //[Test("CI Test")]
+        
         [NUnit.Framework.Ignore("CI Test")]
-        public void ShouldRunSuccessForACompany()
+        public void ShouldRunSuccessForOneCompany()
         {
-            ManagerCacheProductCrawler managerCacheProductCrawler = new ManagerCacheProductCrawler(new ProductCacheRepository(), new ProductRepository());
+            ManagerCacheProductCrawler managerCacheProductCrawler = new ManagerCacheProductCrawler(new ProductCacheRepository(), new ProductRepository(), new CompanyRepository());
             managerCacheProductCrawler.ResetCache(3309611577843405659);
         }
 
-        public void ResetCache
+
+        [NUnit.Framework.Ignore("CI Test")]
+        public void ShouldRunSuccessForAllCompanys()
+        {
+            ManagerCacheProductCrawler managerCacheProductCrawler = new ManagerCacheProductCrawler(new ProductCacheRepository(), new ProductRepository(), new CompanyRepository());
+            managerCacheProductCrawler.ResetCache();
+        }
 
     }
 }

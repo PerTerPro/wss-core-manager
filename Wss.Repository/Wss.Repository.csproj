@@ -75,9 +75,9 @@
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
       <Name>Wss.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WSS.StaticConnect\WSS.StaticConnect.csproj">
+    <ProjectReference Include="..\WSS.StaticConnect\Wss.StaticConnect.csproj">
       <Project>{738fcc2b-5711-4ea9-a9e8-995438046e36}</Project>
-      <Name>WSS.StaticConnect</Name>
+      <Name>Wss.StaticConnect</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -9,6 +9,6 @@ namespace Wss.Repository
 {
     public interface ICompanyRepository:IRepository<Company>
     {
-        IEnumerable<Company> GetAllCompanyCrawler();
+        IEnumerable<Company> GetAllCompanyIdsCrawler();
     }
 }

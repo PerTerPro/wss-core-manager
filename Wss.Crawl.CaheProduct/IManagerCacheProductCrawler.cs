@@ -64,7 +64,7 @@ namespace Wss.Crawl.CaheProduct
 
         public void ResetCache()
         {
-            var companies = _companyRepository.GetAllCompanyCrawler();
+            var companies = _companyRepository.GetAllCompanyIdsCrawler();
             foreach (var companyId in companies)
             {
                 ResetCache(companyId.Id);

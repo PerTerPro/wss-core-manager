@@ -30,5 +30,11 @@ namespace Wss.Crawl.CaheProduct
         {
             
         }
+
+
+        public void ResetCache()
+        {
+          
+        }
     }
 }

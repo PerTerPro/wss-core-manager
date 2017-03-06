@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="CacheManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCrawler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
