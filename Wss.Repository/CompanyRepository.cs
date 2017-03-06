@@ -14,8 +14,6 @@ namespace Wss.Repository
     {
         private IDbConnection _connection;
 
-      
-
         public CompanyRepository()
         {
             _connection=new SqlConnection(WSS.StaticConnect.Connection.ConnectionProduct);
@@ -38,6 +36,16 @@ namespace Wss.Repository
 From Company cp
 where cp.ID = {0}", id);
             return _connection.Query<Company>(query).First();
+        }
+
+        public IEnumerable<Company> GetAllCompanyCrawler()
+        {
+            string query = 
+@"select c.Id
+from company c
+where c.Status=1
+and c.DataFeedType=0";
+            return _connection.Query<Company>(query);
         }
     }
 }
