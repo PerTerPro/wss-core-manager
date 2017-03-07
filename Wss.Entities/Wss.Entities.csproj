@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\wss-core-manager\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="protobuf-net">
       <HintPath>..\DLL\protobuf-net.dll</HintPath>
     </Reference>
@@ -45,6 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeInfo.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Company.cs" />
     <Compile Include="ConfigCrawler.cs" />
@@ -52,6 +57,7 @@
     <Compile Include="Crawler\ProductCache.cs" />
     <Compile Include="Crawler\ProductCrawler.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="ImageProductInfo.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Wss.Bll;
 using Wss.Entities;
 
-namespace Wss.Bll.Crawler
+namespace Wss.Crawl.CaheProduct
 {
     public class AnalysicProduct : IAnalysicProduct
     {

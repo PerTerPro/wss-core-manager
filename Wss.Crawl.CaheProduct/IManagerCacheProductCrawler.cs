@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject.Infrastructure.Language;
 using Wss.Entities;
 using Wss.Entities.Crawler;
 using Wss.Lib.Hash;
@@ -47,14 +48,12 @@ namespace Wss.Crawl.CaheProduct
         {
             _productCacheRepository.Delete(companyId);
             var products = _productRepository.GetProductsForCacheCrawler(companyId, 0, 100000);
-            List<HashProduct> productCaches = products.Select(variable => new HashProduct()
-            {
-                Hash = CommonCrc.Crc64(string.Join("|", new[] { variable.Name, variable.ImageUrl, variable.Price.ToString() })),
-                HashImage = CommonCrc.Crc32(variable.ImageUrl),
-                Id = variable.Id
-            }).ToList();
+            List<HashProduct> productCaches = products.Select(variable => new HashProduct(variable)).ToList();
             _productCacheRepository.UpsertProductHashCache(companyId, productCaches);
+            _productCacheRepository.IncreateCode(companyId, productCaches.Select(a => a.Id).ToList());
         }
+
+
 
         public void CleanCache(long companyId)
         {

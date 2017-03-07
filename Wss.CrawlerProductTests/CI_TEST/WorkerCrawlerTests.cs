@@ -55,7 +55,8 @@ namespace Wss.CrawlerProductTests
         }
 
         [NUnit.Framework.Ignore]
-        public void ShouldCrawlerSuccessExcept()
+        [Test()]
+        public void ShouldCrawlerSuccessExceptUpdateToDb()
         {
 
             IManagerProduct managerProduct = Mock.Create<IManagerProduct>();
@@ -63,6 +64,7 @@ namespace Wss.CrawlerProductTests
             {
                 Console.WriteLine(string.Format("Saved {0} products", obj1.Count()));
             }));
+
             WorkerCrawler w = new WorkerCrawler(companyId,new ProductCacheRepository(), new Downloader(),managerProduct,new CompanyRepository(), new AnalysicProduct());
             w.Start();
         }

@@ -68,6 +68,7 @@
     <Compile Include="Product\IProductRepository.cs" />
     <Compile Include="Product\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TriggerAfterChangeProduct.cs" />
     <Compile Include="TriggerProduct.cs" />
   </ItemGroup>
   <ItemGroup>

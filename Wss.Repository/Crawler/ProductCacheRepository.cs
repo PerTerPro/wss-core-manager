@@ -23,20 +23,16 @@ namespace Wss.Repository.Crawler
             _database = RedisManager.GetRedisServer("redisCacheCrawlerDuplicate").GetDatabase(0);
         }
 
-        public IEnumerable<ProductCache> GetTopProductCaches(long companyId, int numberItems)
+        public IEnumerable<HashProduct> GetTopProductCaches(long companyId, int numberItems)
         {
             RedisValue[] productIds = _database.SortedSetRangeByRank(PREFIX_LASTCRL_PRODUCT + companyId, 0, numberItems, Order.Ascending);
             RedisValue[] productInCaches = _database.HashGet(PREFIX_CACHE_PRODUCT + companyId, productIds);
-            List<ProductCache> productCaches = new List<ProductCache>();
+            List<HashProduct> productCaches = new List<HashProduct>();
             foreach (var strProduct in productInCaches)
             {
-                var product = ProductCache.GetFromJsonProtobuf(strProduct);
-                if (product != null)
-                {
-                    productCaches.Add(product);
-                }
+                productCaches.Add(HashProduct.FromJsonProtobuf(strProduct));
             }
-            return null;
+            return productCaches;
         }
 
         public void UpsertProducts(IEnumerable<ProductCache> productCaches)
@@ -52,6 +48,12 @@ namespace Wss.Repository.Crawler
         {
             _database.KeyDelete(PREFIX_CACHE_PRODUCT + companyId.ToString());
             _database.KeyDelete(PREFIX_LASTCRL_PRODUCT + companyId.ToString());
+        }
+
+        public void IncreateCode(long companyId, List<long> productCaches)
+        {
+            var x = productCaches.Select(a => new SortedSetEntry(a, 0)).ToArray();
+            _database.SortedSetAdd(PREFIX_LASTCRL_PRODUCT + companyId, x);
         }
 
         public void Insert(Entities.Crawler.ProductCache entity)

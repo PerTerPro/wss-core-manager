@@ -11,7 +11,8 @@ namespace Wss.CrawlerProductTests.CI_TEST
        
         
         [NUnit.Framework.Ignore("CI Test")]
-        public void ShouldRunSuccessForOneCompany()
+        [Test]
+        public void ShouldResetCacheCrawlerOfACompany()
         {
             ManagerCacheProductCrawler managerCacheProductCrawler = new ManagerCacheProductCrawler(new ProductCacheRepository(), new ProductRepository(), new CompanyRepository());
             managerCacheProductCrawler.ResetCache(3309611577843405659);

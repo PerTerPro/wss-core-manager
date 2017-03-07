@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Wss.Entities;
 
 namespace Wss.Repository
 {
-    public interface IProductRepository:IRepository<Product>
+    public interface IProductRepository:IRepository<Entities.Product>
     {
         void SetValidProduct(long productId, bool isValid);
         
-        void UpdateProductByCrawler(Product product);
+        void UpdateProductByCrawler(Entities.Product product);
 
         /// <summary>
         /// Tuple. ProductId-ImageOld-ImageNew
@@ -19,13 +16,15 @@ namespace Wss.Repository
         /// <param name="imageProducts"></param>
         void UpdateImageBatch(List<Tuple<long, string, string>> imageProducts);
 
-        IEnumerable<Product> GetProductsForCacheCrawler(long companyId, int pageIndex, int rowInPage);
+        IEnumerable<Entities.Product> GetProductsForCacheCrawler(long companyId, int pageIndex, int rowInPage);
 
-        void UpdateProducts(IEnumerable<Product> products);
+        void UpdateProducts(IEnumerable<Entities.Product> products);
 
         void DeleteProduct(IEnumerable<long> productIds);
 
-        void Insert(IEnumerable<Product> product);
+        void Insert(IEnumerable<Entities.Product> product);
+
+        void UpdateImageBatch(IEnumerable<ImageProductInfo> imageProductInfos);
     }
 
 }
