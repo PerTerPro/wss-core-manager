@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wss.Crawl.CaheProduct.Service
+namespace Wss.Crawl.CacheProduct.Service
 {
     public  class ServiceCacheManager
     {

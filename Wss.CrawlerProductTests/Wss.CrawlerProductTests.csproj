@@ -78,9 +78,9 @@
       <Project>{2DEBA4C2-3D30-4AF5-8DE7-85673D86F82B}</Project>
       <Name>Wss.Core.Logic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Wss.Crawl.CaheProduct\Wss.Crawl.CaheProduct.Lib.csproj">
+    <ProjectReference Include="..\Wss.Crawl.CaheProduct\Wss.Crawl.CacheProduct.Lib.csproj">
       <Project>{671742dd-4960-45b4-9a3b-7234054eb5f7}</Project>
-      <Name>Wss.Crawl.CaheProduct.Lib</Name>
+      <Name>Wss.Crawl.CacheProduct.Lib</Name>
     </ProjectReference>
     <ProjectReference Include="..\Wss.Crawler.CacheProduct.Service\Wss.Crawler.CacheProduct.Service.csproj">
       <Project>{9789f6ad-a353-46c6-8a47-8bae01765bed}</Project>

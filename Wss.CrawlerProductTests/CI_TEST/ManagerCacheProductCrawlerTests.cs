@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Wss.Crawl.CaheProduct;
+using Wss.Crawl.CacheProduct;
 using Wss.Repository;
 using Wss.Repository.Crawler;
 

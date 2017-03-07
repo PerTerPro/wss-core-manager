@@ -9,7 +9,7 @@ using Telerik.JustMock.Helpers;
 using Wss.Bll;
 using Wss.Bll.Crawler;
 using Wss.Bll.EventChangeProduct;
-using Wss.Crawl.CaheProduct;
+using Wss.Crawl.CacheProduct;
 using Wss.Entities;
 using Wss.Entities.Crawler;
 using Wss.Lib.Web;

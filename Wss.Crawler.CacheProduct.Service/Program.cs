@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ninject;
 using Wss.Bll;
 using Wss.Bll.Crawler;
-using Wss.Crawl.CaheProduct;
+using Wss.Crawl.CacheProduct;
 using Wss.Lib.Web;
 using Wss.Repository;
 using Wss.Repository.Crawler;
