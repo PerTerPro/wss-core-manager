@@ -7,8 +7,8 @@
     <ProjectGuid>{671742DD-4960-45B4-9A3B-7234054EB5F7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wss.Crawl.CaheProduct</RootNamespace>
-    <AssemblyName>Wss.Crawl.CaheProduct</AssemblyName>
+    <RootNamespace>Wss.Crawl.CacheProduct</RootNamespace>
+    <AssemblyName>Wss.Crawl.CacheProduct</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,9 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\wss-core-manager\DLL\log4net.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\DLL\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>

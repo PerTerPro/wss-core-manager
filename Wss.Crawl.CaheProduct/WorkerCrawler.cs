@@ -7,7 +7,7 @@ using Wss.Lib.Web;
 using Wss.Repository;
 using Wss.Repository.Crawler;
 
-namespace Wss.Crawl.CaheProduct
+namespace Wss.Crawl.CacheProduct
 {
     public class WorkerCrawler
     {

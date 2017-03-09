@@ -1,7 +1,7 @@
 ﻿using Wss.Bll;
 using Wss.Entities;
 
-namespace Wss.Crawl.CaheProduct
+namespace Wss.Crawl.CacheProduct
 {
     public class AnalysicProduct : IAnalysicProduct
     {

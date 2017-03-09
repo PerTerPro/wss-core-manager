@@ -10,7 +10,7 @@ using Wss.Lib.Hash;
 using Wss.Repository;
 using Wss.Repository.Crawler;
 
-namespace Wss.Crawl.CaheProduct
+namespace Wss.Crawl.CacheProduct
 {
     public interface IManagerCacheProductCrawler
     {
