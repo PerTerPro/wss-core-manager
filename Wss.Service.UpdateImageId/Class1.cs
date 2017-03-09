@@ -13,7 +13,6 @@ namespace Wss.Service.UpdateImageId
 
         public static void Main()
         {
-            
         }
 
         private IProductRepository _productRepository;
@@ -25,7 +24,6 @@ namespace Wss.Service.UpdateImageId
 
         public void UpdateImageId()
         {
-         
         }
     }
 }
