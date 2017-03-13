@@ -52,6 +52,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WSS.ImageImbo.Lib\Wss.ImageImbo.Lib.csproj">
+      <Project>{294a2fa6-9fd6-4a23-a58e-764aeaa642a3}</Project>
+      <Name>Wss.ImageImbo.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

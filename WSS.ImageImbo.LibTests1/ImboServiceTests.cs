@@ -16,5 +16,13 @@ namespace WSS.ImageImbo.Lib.Tests
             //ImboService s = new ImboService();
             //s.PostImgToImbo(@"http://192.168.100.34:40000/users/wss/images/4tzvqVzK2axk", "wss_write", "123websosanh@195", "wss", "https://172.22.1.226", 443);
         }
+
+        [Test()]
+        public void PostImgWithChangeTransferenceTest()
+        {
+            ImboService imaService = new ImboService();
+            imaService.PostImgToImbo(@"C:\Users\xuantrang\Pictures\a.png","wss_write","123websosanh@195","wss","https://172.22.1.226",443); 
+            
+        }
     }
 }

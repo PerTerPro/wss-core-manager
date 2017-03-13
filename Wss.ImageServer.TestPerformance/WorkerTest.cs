@@ -33,7 +33,7 @@ namespace Wss.ImageServer.TestPerformance
                 iCount++;
                 int timeSecond = (int) (DateTime.Now - dtStart).TotalSeconds + 1;
                 int perCountToSecond = iCount/timeSecond;
-               if(iCount%100==0)   Console.WriteLine(string.Format("Worker {0} n/s {1}", nameWorker, perCountToSecond));
+                if (iCount%100 == 0) Console.WriteLine(string.Format("Worker {0} n/s {1}", nameWorker, perCountToSecond));
             }
         }
     }
