@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Telerik.JustMock.AutoMock.Ninject;
 using Wss.Lib.Hash;
 
 namespace Wss.Entities.Crawler

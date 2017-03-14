@@ -38,7 +38,10 @@
       <HintPath>..\..\..\wss-core-manager\DLL\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client">
-      <HintPath>..\DLL\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\..\wss-dlls\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis">
+      <HintPath>..\..\wss-dlls\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,7 +51,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Websosanh.Core.Drivers.RabbitMQ">
-      <HintPath>..\DLL\Websosanh.Core.Drivers.RabbitMQ.dll</HintPath>
+      <HintPath>..\..\wss-dlls\Websosanh.Core.Drivers.RabbitMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Websosanh.Core.Drivers.Redis">
+      <HintPath>..\..\wss-dlls\Websosanh.Core.Drivers.Redis.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

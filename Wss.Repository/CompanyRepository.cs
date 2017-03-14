@@ -16,7 +16,7 @@ namespace Wss.Repository
 
         public CompanyRepository()
         {
-            _connection=new SqlConnection(WSS.StaticConnect.Connection.ConnectionProduct);
+            _connection=new SqlConnection("");
         }
 
         public void Insert(Entities.Company entity)

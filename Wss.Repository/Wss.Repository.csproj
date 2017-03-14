@@ -43,7 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="StackExchange.Redis">
-      <HintPath>..\DLL\StackExchange.Redis.dll</HintPath>
+      <HintPath>..\..\wss-dlls\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,7 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Websosanh.Core.Drivers.Redis">
-      <HintPath>..\DLL\Websosanh.Core.Drivers.Redis.dll</HintPath>
+      <HintPath>..\..\wss-dlls\Websosanh.Core.Drivers.Redis.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -75,10 +75,6 @@
     <ProjectReference Include="..\Wss.Entities\Wss.Entities.csproj">
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
       <Name>Wss.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WSS.StaticConnect\Wss.StaticConnect.csproj">
-      <Project>{738fcc2b-5711-4ea9-a9e8-995438046e36}</Project>
-      <Name>Wss.StaticConnect</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

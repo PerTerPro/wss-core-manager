@@ -18,7 +18,7 @@ namespace Wss.Repository
 
         public ProductRepository()
         {
-            this._connection = new SqlConnection(WSS.StaticConnect.Connection.ConnectionProduct);
+            this._connection = new SqlConnection("");
         }
 
      

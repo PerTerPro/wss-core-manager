@@ -35,7 +35,7 @@
       <HintPath>..\..\..\wss-core-manager\DLL\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="protobuf-net">
-      <HintPath>..\DLL\protobuf-net.dll</HintPath>
+      <HintPath>..\..\wss-dlls\protobuf-net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
