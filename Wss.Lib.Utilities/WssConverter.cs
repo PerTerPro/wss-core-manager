@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Wss.Lib.Utilities
 {
-    class WssConverter
+    public class WssConverter : IWssConverter
     {
+        public long ConvertStringToPrice(string strInput)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
