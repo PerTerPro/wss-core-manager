@@ -10,10 +10,7 @@ namespace Wss.Repository
         
         void UpdateProductByCrawler(Entities.Product product);
 
-        /// <summary>
-        /// Tuple. ProductId-ImageOld-ImageNew
-        /// </summary>
-        /// <param name="imageProducts"></param>
+      
         void UpdateImageBatch(List<Tuple<long, string, string>> imageProducts);
 
         IEnumerable<Entities.Product> GetProductsForCacheCrawler(long companyId, int pageIndex, int rowInPage);
