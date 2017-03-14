@@ -76,6 +76,10 @@
       <Project>{432e1472-96ab-4de0-8727-3ccababe344e}</Project>
       <Name>Wss.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Wss.Lib.RabbitMq\Wss.Lib.RabbitMq.csproj">
+      <Project>{4C5FD091-AD9C-4F64-8B34-A015761221A8}</Project>
+      <Name>Wss.Lib.RabbitMq</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
