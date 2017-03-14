@@ -6,18 +6,11 @@ using System.Threading.Tasks;
 
 namespace Wss.Entities
 {
-    public class Product:Entity
+    public partial class  Product:Entity
     {
         public Product()
         {
             
-        }
-        private Crawler.ProductCrawler productCrawler;
-
-        public Product(Crawler.ProductCrawler productCrawler)
-        {
-            // TODO: Complete member initialization
-            this.productCrawler = productCrawler;
         }
         public string Name { get; set; }
         public long Price { get; set; }

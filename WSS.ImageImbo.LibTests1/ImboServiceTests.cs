@@ -14,7 +14,7 @@ namespace WSS.ImageImbo.Lib.Tests
         public void PostImgToImboTest()
         {
             //ImboService s = new ImboService();
-            //s.PostImgToImbo(@"http://192.168.100.34:40000/users/wss/images/4tzvqVzK2axk", "wss_write", "123websosanh@195", "wss", "https://172.22.1.226", 443);
+            //s.PostImgToImbo(@"http://dienmaytanbinh.vn/data/upload/SanakyVH-5699W-1413906600-.jpg", "wss_write", "123websosanh@195", "wss", "https://172.22.1.226", 443);
         }
     }
 }
