@@ -8,10 +8,6 @@ using Wss.Lib.RabbitMq;
 namespace Wss.Repository
 {
 
-
-    /// <summary>
-    /// XuanTrang
-    /// </summary>
     public interface ITriggerAfterChangeProduct
     {
         void SendProduct(Entities.ChangeInfo changeInfo,string typeChange);
@@ -19,16 +15,16 @@ namespace Wss.Repository
 
     public class TriggerAfterChangeProduct : ITriggerAfterChangeProduct
     {
-        private IProducer _producer;
+        private readonly IMqProducer _producer;
 
-        public TriggerAfterChangeProduct()
+        public TriggerAfterChangeProduct(IMqProducer producer, IMqProducer producer1)
         {
-            
+            _producer = producer1;
         }
 
         public void SendProduct(Entities.ChangeInfo changeInfo, string typeChange)
         {
-            
+            _producer.PublishString(changeInfo.ProductId.ToString());
         }
     }
 }

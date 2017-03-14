@@ -6,16 +6,16 @@ using System.Linq;
 using Dapper;
 using Wss.Entities;
 
-
-namespace Wss.Repository
+namespace Wss.Repository.Product
 {
     public class ProductRepository:IProductRepository
     {
 
+        
         private readonly IDbConnection _connection = null;
         private readonly ITriggerAfterChangeProduct _eventAfterChange = null; 
 
-
+       
         public ProductRepository()
         {
             this._connection = new SqlConnection("");
@@ -24,20 +24,20 @@ namespace Wss.Repository
      
 
 
-        public void Insert(Product entity)
+        public void Insert(Entities.Product entity)
         {
 
         }
 
-        public void Delete(Product entity)
+        public void Delete(Entities.Product entity)
         {
             
         }
 
-        public Product GetById(long id)
+        public Entities.Product GetById(long id)
         {
             string sql = string.Format(@"Select Id, Name, Price, ImageId From Product pt Where pt.Id = {0}", id);
-            return this._connection.Query<Product>(sql).First();
+            return this._connection.Query<Entities.Product>(sql).First();
         }
 
 
@@ -61,10 +61,10 @@ namespace Wss.Repository
    
 
 
-        public IEnumerable<Product> GetProductsForCacheCrawler(long companyId, int pageId, int rowInPage)
+        public IEnumerable<Entities.Product> GetProductsForCacheCrawler(long companyId, int pageId, int rowInPage)
         {
             string sql = string.Format(@"Select Id, Name, Price, ImageId, ImageUrls as ImageUrl, Company as CompanyId, DetailUrl From Product pt Where pt.company = {0}", companyId);
-            return _connection.Query<Product>(sql);
+            return _connection.Query<Entities.Product>(sql);
         }
 
        
@@ -86,17 +86,17 @@ namespace Wss.Repository
         }
 
 
-        public void UpdateProductByCrawler(Product product)
+        public void UpdateProductByCrawler(Entities.Product product)
         {
             throw new NotImplementedException();
         }
 
-        public void UpdateProducts(IEnumerable<Product> products)
+        public void UpdateProducts(IEnumerable<Entities.Product> products)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(IEnumerable<Product> product)
+        public void Insert(IEnumerable<Entities.Product> product)
         {
             throw new NotImplementedException();
         }
@@ -111,6 +111,8 @@ namespace Wss.Repository
             {
                 _eventAfterChange.SendProduct(new ChangeInfo(variable.ProductId), "UpdateImageBath");
             }
+
+
         }
     }
 }

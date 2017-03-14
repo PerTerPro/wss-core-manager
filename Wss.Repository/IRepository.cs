@@ -7,8 +7,6 @@ namespace Wss.Repository
         void Insert(T entity);
         void Delete(long id);
         T GetById(long id);
-      
     }
 
-    
 }

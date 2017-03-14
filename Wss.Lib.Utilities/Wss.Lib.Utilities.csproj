@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A93322E5-A7F5-4ED7-B3CA-F31CDA3970A7}</ProjectGuid>
+    <ProjectGuid>{B1B12C6C-C8CA-4FD6-9ACD-C278DDAFE2FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wss.Lib.Utilities</RootNamespace>

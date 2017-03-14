@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject.Modules;
 using Wss.Repository;
+using Wss.Repository.Product;
 
 namespace Wss.Factory
 {

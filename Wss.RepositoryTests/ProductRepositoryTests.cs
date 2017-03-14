@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using NUnit.Framework;
 using Wss.Repository;
+using Wss.Repository.Product;
 
 namespace Wss.RepositoryTests
 {
