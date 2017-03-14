@@ -20,8 +20,6 @@ namespace WSS.ImageImbo.Lib
 {
     public class ImboService : IImboService
     {
-
-
         private string ToHexString(byte[] array)
         {
             StringBuilder hex = new StringBuilder(array.Length*2);
@@ -182,6 +180,56 @@ namespace WSS.ImageImbo.Lib
             using (var streamPushToImbo = request.GetRequestStream())
             {
                 if (streamImageDownload != null) streamImageDownload.CopyTo(streamPushToImbo);
+            }
+
+            using (WebResponse response = request.GetResponse())
+            {
+                using (var stream = response.GetResponseStream())
+                {
+                    using (StreamReader sr99 = new StreamReader(stream))
+                    {
+                        var responseContent = sr99.ReadToEnd();
+                        dynamic d = JObject.Parse(responseContent);
+                        idImageNew = d.imageIdentifier;
+                    }
+                }
+            }
+            return idImageNew;
+        }
+        public string PostImgToImboFromFile(string file, string publicKey, string privateKey, string userName, string host, int port)
+        {
+            string idImageNew = "";
+            //download image
+          
+         
+           
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls
+                                                   | SecurityProtocolType.Tls11
+                                                   | SecurityProtocolType.Tls12
+                                                   | SecurityProtocolType.Ssl3;
+            ServicePointManager
+                .ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) => true;
+            var responseImageDownload = new StreamReader(file);
+      
+
+            // Imbo
+            string urlQuery = host + ":" + port + @"/users/" + userName + @"/images";
+            string strDate = DateTime.Now.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ");
+
+            string str = "POST" + "|" + host + ((port != 443) ? (":" + port) : "") + @"/users/" + userName + @"/images" + "|" + publicKey + "|" + strDate;
+            var signleData = CreateToken(str, privateKey);
+
+            var request = (HttpWebRequest)WebRequest.Create(urlQuery);
+            request.Headers.Add("X-Imbo-PublicKey", publicKey);
+            request.Headers.Add("X-Imbo-Authenticate-Timestamp", strDate);
+            request.Headers.Add("X-Imbo-Authenticate-Signature", signleData);
+            request.ContentType = "application/json";
+            request.Method = "POST";
+
+            using (var streamPushToImbo = request.GetRequestStream())
+            {
+                if (responseImageDownload != null) responseImageDownload.BaseStream.CopyTo(streamPushToImbo);
             }
 
             using (WebResponse response = request.GetResponse())
