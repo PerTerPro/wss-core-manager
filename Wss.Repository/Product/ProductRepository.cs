@@ -6,7 +6,7 @@ using System.Linq;
 using Dapper;
 using Wss.Entities;
 
-namespace Wss.Repository.Product
+namespace Wss.Repository
 {
     public class ProductRepository:IProductRepository
     {
