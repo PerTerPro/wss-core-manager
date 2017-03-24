@@ -14,5 +14,10 @@ namespace Wss.Entities
         {
             ProductId = productId;
         }
+
+        public string JsonString()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this);
+        }
     }
 }

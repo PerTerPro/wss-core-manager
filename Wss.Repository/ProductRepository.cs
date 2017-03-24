@@ -11,17 +11,20 @@ namespace Wss.Repository
     public class ProductRepository:IProductRepository
     {
 
-        
-        private readonly IDbConnection _connection = null;
+        private readonly SqlConnection _connection = null;
         private readonly ITriggerAfterChangeProduct _eventAfterChange = null; 
 
        
         public ProductRepository()
         {
-            this._connection = new SqlConnection("");
+            this._connection = new SqlConnection(@"Data Source=192.168.100.178;Initial Catalog=QT_2;Persist Security Info=True;User ID=sa;Password=123456a@;connection timeout=5000");
         }
 
-     
+
+        public ProductRepository(ITriggerAfterChangeProduct triggerAfterChangeProduct)
+        {
+            
+        }
 
 
         public void Insert(Entities.Product entity)
@@ -107,12 +110,82 @@ namespace Wss.Repository
             var productInfos = imageProductInfos as ImageProductInfo[] ?? imageProductInfos.ToArray();
             List<string> str = productInfos.Select(a => string.Format(pattern, a.ImageId, a.Width, a.Height, a.ProductId)).ToList();
             this._connection.Execute(string.Join(";", str));
+
             foreach (var variable in productInfos)
             {
-                _eventAfterChange.SendProduct(new ChangeInfo(variable.ProductId), "UpdateImageBath");
+                _eventAfterChange.SendProduct(new ChangeInfo(variable.ProductId));
             }
 
 
+        }
+
+        public void InsertProduct(long productId, string name, long price)
+        {
+            var command = this._connection.CreateCommand();
+            command.CommandText = "Insert Product (Id, Name, Price) Values (@Id, @Name, @Price)";
+            command.CommandType = CommandType.Text;
+            command.Parameters.AddRange(new[]
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "Id",
+                    SqlValue = productId,
+                    SqlDbType = SqlDbType.BigInt
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "Price",
+                    SqlValue = price,
+                    SqlDbType = SqlDbType.BigInt
+                },
+
+                new SqlParameter()
+                {
+                    ParameterName = "Name",
+                    SqlDbType = SqlDbType.NVarChar,
+                    SqlValue = name
+                }
+            });
+
+            _connection.Open();
+            command.ExecuteNonQuery();
+            _connection.Close();
+        }
+
+
+        public void UpdateMainInfoProduct(long productId, string name, long price)
+        {
+            var command = this._connection.CreateCommand();
+            command.CommandText = "Update Product Set Name = @Name, Price = @Price Where Id = @Id";
+            command.CommandType=CommandType.Text;
+            command.Parameters.AddRange(new[]
+            {
+                new SqlParameter()
+                {
+                    ParameterName = "Id",
+                    SqlValue = productId,
+                    SqlDbType = SqlDbType.BigInt
+                },
+                new SqlParameter()
+                {
+                    ParameterName = "Price",
+                    SqlValue = price,
+                    SqlDbType = SqlDbType.BigInt
+                },
+
+                new SqlParameter()
+                {
+                    ParameterName = "Name",
+                    SqlDbType = SqlDbType.NVarChar,
+                    SqlValue = name
+                }
+            });
+
+            _connection.Open();
+            command.ExecuteNonQuery();
+            _connection.Close();
+
+            return;
         }
     }
 }

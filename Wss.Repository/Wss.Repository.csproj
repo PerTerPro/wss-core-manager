@@ -65,8 +65,8 @@
     <Compile Include="ICompanyRepository.cs" />
     <Compile Include="IDbConnectionProduct.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="Product\IProductRepository.cs" />
-    <Compile Include="Product\ProductRepository.cs" />
+    <Compile Include="IProductRepository.cs" />
+    <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TriggerAfterChangeProduct.cs" />
     <Compile Include="TriggerProduct.cs" />

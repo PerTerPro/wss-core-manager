@@ -22,6 +22,11 @@ namespace Wss.Repository
         void Insert(IEnumerable<Entities.Product> product);
 
         void UpdateImageBatch(IEnumerable<ImageProductInfo> imageProductInfos);
+
+
+        void UpdateMainInfoProduct(long productId, string name, long price);
+
+        void InsertProduct(long productId, string name, long price);
     }
 
 }

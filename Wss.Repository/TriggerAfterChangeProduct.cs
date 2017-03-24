@@ -10,21 +10,23 @@ namespace Wss.Repository
 
     public interface ITriggerAfterChangeProduct
     {
-        void SendProduct(Entities.ChangeInfo changeInfo,string typeChange);
+        void SendProduct(Entities.ChangeInfo changeInfo);
     }
 
     public class TriggerAfterChangeProduct : ITriggerAfterChangeProduct
     {
-        private readonly IMqProducer _producer;
-
-        public TriggerAfterChangeProduct(IMqProducer producer, IMqProducer producer1)
+        public TriggerAfterChangeProduct(IMqProducer producer)
         {
-            _producer = producer1;
+            this.producer = producer;
         }
 
-        public void SendProduct(Entities.ChangeInfo changeInfo, string typeChange)
+        private IMqProducer producer;
+
+      
+
+        public void SendProduct(Entities.ChangeInfo changeInfo)
         {
-            _producer.PublishString(changeInfo.ProductId.ToString());
+            producer.PublishString(changeInfo.JsonString());
         }
     }
 }
