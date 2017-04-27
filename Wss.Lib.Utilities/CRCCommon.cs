@@ -17,12 +17,12 @@ namespace Wss.Lib.Utilities
 
             byte[] x = BitConverter.GetBytes(crc);
 
-            return BitConverter.ToInt64(x, 0); //Convert.ToInt64(crc & 0x0008000000000000);
+            return Math.Abs(BitConverter.ToInt64(x, 0));
         }
         public static int getCRC32(string s)
         {
             Encoding unicode = Encoding.Unicode;
-            return CRC32.Compute(unicode.GetBytes(s.Trim().ToLower()));
+            return Math.Abs(CRC32.Compute(unicode.GetBytes(s.Trim().ToLower())));
         }
     }
 }
