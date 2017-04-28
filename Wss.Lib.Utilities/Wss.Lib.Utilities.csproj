@@ -45,6 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CRC32.cs" />
+    <Compile Include="CRC64.cs" />
+    <Compile Include="CRCCommon.cs" />
     <Compile Include="IWssConverter.cs" />
     <Compile Include="MoneyUtil.cs" />
     <Compile Include="MyExtensions.cs" />
