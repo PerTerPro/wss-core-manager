@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wss.Lib.Utilities
 {
-    public interface IWssConverter
+    public class Parameter
     {
-        long ConvertStringToPrice(string strInput);
     }
 }

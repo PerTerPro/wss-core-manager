@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wss.Lib.Utilities
+namespace Wss.Lib.Money
 {
-    public interface IWssConverter
+     public class Class1
     {
-        long ConvertStringToPrice(string strInput);
     }
 }
