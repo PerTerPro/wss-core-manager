@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="CRC32.cs" />
     <Compile Include="CRC64.cs" />
     <Compile Include="CRCCommon.cs" />
